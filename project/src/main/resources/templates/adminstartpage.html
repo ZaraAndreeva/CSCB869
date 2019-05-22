@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pretty Simple Responsive Dropdown Navigation Demo</title>
+	<meta name="viewport" content="width=device-width, product-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<!-- css files -->
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- js files -->
+<style>
+.content { margin:50px auto; max-width:728px; line-height:1.7;}
+background-image: url("images/doodle.jpg");
+</style>
+
+</head>
+<body>
+	<!-- header starts -->
+	<header>
+		<!-- responsive nav bar -->
+		<div class="nav-bar" >
+			<a href=""><i class="fa fa-bars"></i><span>Menu</span></a>
+		</div>
+		<!-- navigation -->
+		<nav>
+			<ul>
+
+				<li><a href="#"><i class="fa fa-cog"></i>About</a></li>
+				<li class="sub-menu">
+					<a href="#"><i class="fa  fa-product"></i>Създай<i class="fa fa-angle-down"></i></a>
+					<!-- children nav -->
+					<ul class="children">
+							<li><a href="registrationform.html"><span>-</span> Регистрирай потребител</a></li>
+						<li><a href="register-parent.html"><span>-</span> Регистрирай родител</a></li>
+							<li><a href="add-subject.html"><span>-</span> Създай предмет</a></li>
+						<li><a href="add-subjectTeacher.html"><span>-</span> Създай предмет и учител</a></li>
+						<li><a href="add-school.html"><span>-</span> Създай училище</a></li>
+
+					</ul>
+				</li>
+				<li class="sub-menu"><a href="#"><i class="fa fa-eye"></i>Прегледай<i class="fa fa-angle-down"></i></a>
+
+					<ul class="children">
+							<li><a href="admin-product.html"><span>-</span>Потребители</a></li>
+					</ul>
+
+				</li>
+				<li class="sub-menu"><a href="#"><i class="fa fa-product"></i>Редактирай<i class="fa fa-angle-down"></i></a>
+
+					<ul class="children">
+						<li><a href="modify-grade.html"><span>-</span> Клас на ученик</a></li>
+						<li><a href="modify-product.html"><span>-</span> Потребител</a></li>
+						<li><a href="delete-product.html"><span>-</span> Изтрий потребител</a></li>
+
+					</ul>
+
+				</li>
+			</ul>
+		</nav> <!-- navigation end -->
+		
+	</header> <!-- header end -->
+
+	<!-- body contents -->
+	
+	
+	<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+	<script src="js/main.js"></script>	
+    <script type="text/javascript">
+
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

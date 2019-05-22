@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title>Bootstrap Snippet for Datatable - Bootsnipp.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+            body{
+       @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+        body {
+            background-image: url("images/doodle.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="bg">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+        <center>
+            <h2>Добре дошли в профила си, <div id="userName">
+                </div></h2>
+        </center>
+        <br>
+        <div class="container">
+            <div class="row">
+
+
+                <div class="col-md-12">
+                    <h4>Предмети и оценки</h4>
+                    <div class="table-responsive">
+
+
+                        <table id="mytable" class="table table-bordred table-striped">
+
+                            <thead>
+
+
+                                <th>Предмет</th>
+                                <th>Оценки</th>
+
+                            </thead>
+                            <tbody id="subjects">
+                                <tr>
+
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+                        <!-- <div class="clearfix"></div>
+                        <ul class="pagination pull-right">
+                            <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                            </li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+                        </ul> -->
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+    var dataPeek;
+
+    let test = () => {
+        let innerHtml = "";
+
+        $.ajax({
+             type : "GET",
+             url : "http://localhost:8080/grade",
+             contentType: "application/json",
+             dataType: "json",
+             success : function (data, status) {
+
+                for(let grade of data){
+                    innerHtml += "<tr><td>" + grade.subject.name + "</td> <td>"+ grade.grade + "</td></tr>" ;
+
+
+                    var para = document.createElement("p");
+                    var node = document.createTextNode("This is new.");
+                    para.appendChild(node);
+
+                    var element = document.getElementById("subjects");
+                    element.appendChild(para);
+
+                }
+
+                document.getElementById('subjects').innerHTML = innerHtml;
+
+                dataPeek = data;
+
+             },
+             error : function (status) {
+                console.log("error in test()");
+             }
+        });
+
+    };
+
+    var dataPeek2;
+    let subject = () => {
+            let el = document.getElementById('userName');
+
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/currentUser",
+                contentType: "application/json",
+                dataType: "json",
+                success: function (data, status) {
+                    let label = document.createElement("label");
+                    label.innerHTML = data.name;
+                    el.appendChild(label);
+
+                    dataPeek2 = data;
+
+                },
+                error: function (status) {
+                    console.log("error in subject()");
+                }
+            });
+
+        };
+
+    subject();
+
+    test();
+
+    </script>

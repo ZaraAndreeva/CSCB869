@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>jQuery Bootstable: Editable Bootstrap 4 Table Demo</title>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <!-- Scripts -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="js_plugin/bootstable.js" ></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/darkly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <!-- css files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- js files -->
+    <style>
+
+	body, html {
+  height: 100%;
+
+  background-image: url("images/doodle.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+	.content { margin:50px auto; max-width:728px; line-height:1.7;}
+	</style>
+
+</head>
+<body>
+<!-- header starts -->
+<header>
+    <!-- responsive nav bar -->
+    <div class="nav-bar" >
+        <a href=""><i class="fa fa-bars"></i><span>Menu</span></a>
+    </div>
+    <!-- navigation -->
+    <nav>
+        <ul>
+
+
+            <li class="sub-menu">
+                <a href="#"><i class="fa  fa-product"></i>Създай<i class="fa fa-angle-down"></i></a>
+                <!-- children nav -->
+                <ul class="children">
+                    <li><a href="registrationform.html"><span>-</span> Регистрирай потребител</a></li>
+                    <li><a href="register-parent.html"><span>-</span> Регистрирай родител</a></li>
+                    <li><a href="add-subject.html"><span>-</span> Създай предмет</a></li>
+                    <li><a href="add-subjectTeacher.html"><span>-</span> Създай предмет и учител</a></li>
+                    <li><a href="add-school.html"><span>-</span> Създай училище</a></li>
+
+                </ul>
+            </li>
+            <li class="sub-menu"><a href="#"><i class="fa fa-eye"></i>Прегледай<i class="fa fa-angle-down"></i></a>
+
+                <ul class="children">
+                    <li><a href="admin-product.html"><span>-</span> Потребители</a></li> <li><a href="admin-grades.html"><span>-</span> Оценки</a></li>
+                    <li><a href="admin-subject.html"><span>-</span> Програма</a></li>
+                    <li><a href="admin-subjects.html"><span>-</span> Предмети</a></li>
+                    <li><a href="admin-schools.html"><span>-</span> Училища</a></li>
+
+
+                </ul>
+
+            </li>
+            <li class="sub-menu"><a href="#"><i class="fa fa-product"></i>Редактирай<i class="fa fa-angle-down"></i></a>
+
+                <ul class="children">
+                    <li><a href="modify-grade.html"><span>-</span> Клас на ученик</a></li>
+                    <li><a href="modify-product.html"><span>-</span> Потребител</a></li>
+                    <li><a href="delete-product.html"><span>-</span> Изтрий потребител</a></li>
+
+                </ul>
+
+            </li>
+        </ul>
+    </nav> <!-- navigation end -->
+
+</header> <!-- header end -->
+
+<!-- body contents -->
+
+
+</div>
+
+<main class="py-4">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Ученици и оценки</div>
+
+                    <div class="card-body">
+
+                        <table class="table table-responsive-md table-sm table-bordered" id="makeEditable">
+                            <thead>
+                            <tr>
+                                <th>Име на ученик</th>
+                                <th>Предмет</th>
+                                <th>Училище</th>
+                                <th>Клас</th>
+                                <th>Оценка</th>
+                            </tr>
+                            </thead>
+
+                            <tbody id="product">
+                            <tr>
+
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+</div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+
+
+var dataPeek;
+
+let test = () => {
+    let innerHtml = "";
+
+    $.ajax({
+         type : "GET",
+         url : "http://localhost:8080/getAllGrades",
+         contentType: "application/json",
+         dataType: "json",
+         success : function (data, status) {
+
+            for(let product of data){
+                innerHtml += "<tr><td>" + product.studentName + "</td> <td>"+ product.subjectName + "</td> <td> " + product.schoolName + "</td> <td> " + product.klas + "</td> <td> "+ product.grade + "</td></tr>" ;
+
+
+                var para = document.createElement("p");
+                var node = document.createTextNode("This is new.");
+                para.appendChild(node);
+
+                var element = document.getElementById("product");
+                element.appendChild(para);
+
+            }
+
+            document.getElementById('product').innerHTML = innerHtml;
+
+            dataPeek = data;
+
+         },
+         error : function (status) {
+            console.log("error");
+         }
+    });
+
+};
+
+test();
+
+</script>
+
+</html>
